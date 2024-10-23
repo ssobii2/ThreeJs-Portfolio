@@ -1,100 +1,39 @@
-# Project Name
-
-![Project Logo](public/assets/project-logo1.png)
-
-## Table of Contents
-
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Components](#components)
-- [Models and Textures](#models-and-textures)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+# ThreeJS Portfolio
 
 ## About the Project
 
-Provide a brief description of your project, its purpose, and what it aims to achieve. Mention any key technologies or frameworks used.
+This project is a modern web application designed to showcase a portfolio of 3D models and textures. It aims to provide an interactive and visually appealing experience for users to explore various components and animations. The project leverages cutting-edge technologies to deliver high performance and responsiveness.
 
 ## Features
 
-- List the main features of your project.
-- Highlight any unique aspects or functionalities.
+- Interactive 3D models and animations.
+- Responsive design for seamless experience across devices.
+- Integration with popular frameworks and libraries.
+- User-friendly interface with intuitive navigation.
 
-## Getting Started
+## Technologies Used
 
-### Prerequisites
-
-- Node.js
-- npm or yarn
-
-### Installation
-
-1. Clone the repo:
-   ```sh
-   git clone https://github.com/your-username/your-repo.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd your-repo
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-   or
-   ```sh
-   yarn install
-   ```
-
-## Usage
-
-Provide instructions on how to run and use the project. Include any necessary commands or configurations.
-
-```sh
-npm run dev
-```
-
-Explain any environment variables or configurations needed.
+- **React**: For building the user interface.
+- **Three.js**: For rendering 3D graphics.
+- **Node.js**: As the runtime environment.
+- **Vite**: For module bundling.
+- **Tailwind CSS**: For styling components.
+- **GSAP**: For some animations.
 
 ## Components
 
-- **Button.jsx**: Describe its purpose and usage.
-- **CanvasLoader.jsx**: Describe its purpose and usage.
-- **Cube.jsx**: Describe its purpose and usage.
-- Add descriptions for other components as needed.
+- **Button.jsx**: A customizable button component used in some parts of the application.
+- **CanvasLoader.jsx**: Displays a loading animation while 3D models are being prepared.
+- **Cube.jsx**: Represents a 3D cube model with interactive features.
+- **DemoComputer.jsx**: A 3D model of a computer setup for demonstration purposes.
+- **Developer.jsx**: A 3D model representing a developer avatar.
+- **HackerRoom.jsx**: A 3D scene depicting a hacker's room environment.
+- **HeroCamera.jsx**: Manages the camera view for the hero section.
+- **ReactLogo.jsx**: A 3D model of React logo.
+- **Rings.jsx**: A 3D model of rings.
+- **Target.jsx**: A 3D model of a target.
 
 ## Models and Textures
 
-- **Models**: List and describe the 3D models used in the project.
-- **Textures**: List and describe the textures used in the project.
-
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name - [your-email@example.com](mailto:your-email@example.com)
-
-Project Link: [https://github.com/your-username/your-repo](https://github.com/your-username/your-repo)
-
-## Acknowledgments
-
-- List any resources, libraries, or individuals you want to thank.
-- Mention any tutorials or documentation that helped you.
+- **Models**: Includes various 3D models such as computers, cubes, and avatar.
+- **Textures**: Provides textures for some models.
