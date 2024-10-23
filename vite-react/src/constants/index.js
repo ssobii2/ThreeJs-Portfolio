@@ -61,7 +61,7 @@ export const myProjects = [
     title: 'AI-RAG - An AI Chatbot Website',
     desc: 'An AI chatbot website that lets you chat with based on the provided context. Context can be PDFs, Images, Excel files, CSV files and more. The chatbot is using Ollama, an open-source project that lets you utilize many open-source AI models to chat with.',
     subdesc:
-      'Built using Vue.js, Tailwind CSS, JavaScript, Docker, Ollama and FastAPI.',
+      'Built using Vue.js, Tailwind CSS, JavaScript, Docker, Ollama, FastAPI and Langchain.',
     href: 'https://github.com/ssobii2/AI-RAG-Chatbot-Ollama',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
@@ -74,8 +74,8 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'Vue.js',
+        path: '/assets/vuejs.png',
       },
       {
         id: 2,
@@ -84,13 +84,28 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Python',
+        path: '/assets/python.png',
+      },
+      {
+        id: 5,
+        name: 'Ollama',
+        path: '/assets/ollama.png',
+      },
+      {
+        id: 6,
+        name: 'Langchain',
+        path: '/assets/langchain.png',
+      },
+      {
+        id: 7,
+        name: 'Docker',
+        path: '/assets/docker.png',
       },
     ],
   },
@@ -116,18 +131,18 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'CSS',
+        path: 'assets/css.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'HTML',
+        path: '/assets/html.png',
       },
     ],
   },
@@ -155,18 +170,18 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'CSS',
+        path: 'assets/css.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'HTML',
+        path: '/assets/html.png',
       },
     ],
   },
@@ -187,23 +202,28 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'Vue.js',
+        path: '/assets/vuejs.png',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Bootstrap',
+        path: 'assets/bootstrap.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Wordpress',
+        path: '/assets/wordpress.png',
+      },
+      {
+        id: 5,
+        name: 'Laravel',
+        path: '/assets/laravel.png',
       },
     ],
   },
@@ -212,7 +232,7 @@ export const myProjects = [
     desc: "Zyntern is Hungary's career portal for students and recent graduates. Create your profile, learn about the companies, get notified about the career opportunities that match you, and apply with a click. I contributed by fixing bugs and optimizing the website with clean code. Also, integration of Product Fruits replacing Userpilot services.",
     subdesc:
       'Built with Vue.js, Laravel and Bootstrap, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    href: 'https://zyntern.com',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {
@@ -224,23 +244,23 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'Vue.js',
+        path: '/assets/vuejs.png',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Bootstrap',
+        path: 'assets/bootstrap.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Laravel',
+        path: '/assets/laravel.png',
       },
     ],
   },
