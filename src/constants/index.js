@@ -66,7 +66,7 @@ export const myProjects = [
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
-      backgroundColor: '#2A1816',
+      backgroundColor: '#FFF',
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
@@ -155,10 +155,10 @@ export const myProjects = [
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
-      backgroundColor: '#60f5a1',
+      backgroundColor: '#13202F',
       background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
+        'linear-gradient(0deg, ##13202F, ##13202F), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+      border: '0.2px solid #17293E',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
     spotlight: '/assets/spotlight3.png',
@@ -284,7 +284,7 @@ export const workExperiences = [
     pos: 'Internship',
     duration: 'Sep 2022 - May 2023',
     title: "Streamline a website to web-based service integration (based on the Bootstrap framework). Consolidate user requirements into a webpage. Using a different JavaScript-based solution/library for data visualization. A user-friendly web interface will integrate charts, plots, and maps into the site. Extending the already-made login system for the client website using PHP and UserSpice.",
-    icon: '/assets/framer.svg',
+    icon: '/assets/datelite.png',
     animation: 'clapping',
   },
   {
@@ -293,7 +293,7 @@ export const workExperiences = [
     pos: 'Junior Web Developer',
     duration: 'Jan 2024 - Present',
     title: "Fixing Bugs on different projects and extending them with new features according to the client’s needs. Learning different web-based technologies and frameworks likeWordPress, Vue js, Laravel etc. Optimizing code on existing projects and maintaining them according to the client's needs.",
-    icon: '/assets/figma.svg',
+    icon: '/assets/wozify.png',
     animation: 'victory',
   },
 ];
