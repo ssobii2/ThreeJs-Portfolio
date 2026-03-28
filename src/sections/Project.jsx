@@ -27,12 +27,12 @@ const Project = () => {
     <section className="c-space my-20" ref={ref}>
       <p className="head-text">My Work</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 bg-black-200 rounded-lg">
+          <div className="absolute top-0 right-0 w-1/2 h-48 overflow-hidden rounded-xl opacity-60">
             <img
               src={currentProject.spotlight}
               alt="spotlight"
-              className="w-full h-96 object-cover rounded-xl"
+              className="w-full h-full object-cover"
             />
           </div>
           <div
@@ -45,20 +45,23 @@ const Project = () => {
               className="w-10 h-10 shadow-sm"
             />
           </div>
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">
+          <div className="flex flex-col gap-3 text-white-600 my-5 relative z-10">
+            <p className="text-white text-xl sm:text-2xl font-semibold animatedText line-clamp-2">
               {currentProject.title}
             </p>
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
+            <p className="animatedText text-sm sm:text-base line-clamp-3">{currentProject.desc}</p>
+            <p className="animatedText text-sm line-clamp-2 hidden sm:block">{currentProject.subdesc}</p>
           </div>
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
-              {currentProject.tags.map((tag, index) => (
+          <div className="flex items-center justify-between flex-wrap gap-3 relative z-10">
+            <div className="flex items-center gap-2 flex-wrap">
+              {currentProject.tags.slice(0, 4).map((tag, index) => (
                 <div key={index} className="tech-logo">
-                  <img src={tag.path} alt="tag.name" />
+                  <img src={tag.path} alt={tag.name} className="w-6 h-6" />
                 </div>
               ))}
+              {currentProject.tags.length > 4 && (
+                <span className="text-white-600 text-xs">+{currentProject.tags.length - 4}</span>
+              )}
             </div>
             <a
               href={currentProject.href}
@@ -70,10 +73,11 @@ const Project = () => {
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
             </a>
           </div>
-          <div className="flex justify-between items-center mt-7">
+          <div className="flex justify-between items-center mt-5 relative z-10">
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("previous")}
+              aria-label="Previous project"
             >
               <img
                 src="/assets/left-arrow.png"
@@ -81,9 +85,11 @@ const Project = () => {
                 className="w-4 h-4"
               />
             </button>
+            <span className="text-white-600 text-sm">{selectedProjectIndex + 1} / {projectCount}</span>
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("next")}
+              aria-label="Next project"
             >
               <img
                 src="/assets/right-arrow.png"
@@ -94,9 +100,9 @@ const Project = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div className="border border-black-300 bg-black-200 rounded-lg h-72 md:h-full min-h-[400px]">
             {isVisible && (
-                <Canvas>
+                <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
                     <ambientLight intensity={Math.PI} />
                     <directionalLight position={[10, 10, 5]} />
 

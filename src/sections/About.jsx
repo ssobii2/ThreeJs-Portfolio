@@ -1,9 +1,13 @@
 import Globe from "react-globe.gl";
 import Button from "../components/Button";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const globeSize = isMobile ? 200 : 326;
+
   const handleCopy = () => {
     navigator.clipboard.writeText("subhanimran4@gmail.com");
     setHasCopied(true);
@@ -20,7 +24,7 @@ const About = () => {
             <img
               src="/assets/grid1.png"
               alt="grid-1"
-              className="w-full sm:h-[276px] h-fit object-contain"
+              className="w-full sm:h-[276px] h-48 object-contain"
             />
 
             <div>
@@ -37,7 +41,7 @@ const About = () => {
             <img
               src="/assets/grid2.png"
               alt="grind-2"
-              className="w-full sm:2-[276px] h-fit object-contain"
+              className="w-full sm:h-[276px] h-48 object-contain"
             />
 
             <div>
@@ -52,10 +56,10 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="rounded-3xl w-full sm:h-[326px] h-[220px] flex justify-center items-center overflow-hidden">
               <Globe
-                height={326}
-                width={326}
+                height={globeSize}
+                width={globeSize}
                 backgroundColor="rgba(0, 0, 0, 0)"
                 backgroundImageOpacity={0.5}
                 showAtmosphere
@@ -72,7 +76,7 @@ const About = () => {
                 I'm based in Pakistan, with remote work available.
               </p>
               <a href="#contact" className="w-fit">
-                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                <Button name="Contact Me" isBeam containerClass="w-full mt-5 sm:mt-10" />
               </a>
             </div>
           </div>
@@ -83,7 +87,7 @@ const About = () => {
             <img
               src="/assets/grid3.png"
               alt="grid-3"
-              className="w-full sm:h-[266px] h-fit object-contain"
+              className="w-full sm:h-[266px] h-48 object-contain"
             />
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
@@ -100,7 +104,7 @@ const About = () => {
             <img
               src="/assets/grid4.png"
               alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+              className="w-full md:h-[126px] sm:h-[276px] h-40 object-cover sm:object-top"
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
@@ -109,7 +113,7 @@ const About = () => {
                   src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
                   alt="copy"
                 />
-                <p className="lg:text-wxl md:text-xl font-medium text-gray_gradient text-white">
+                <p className="lg:text-xl md:text-lg text-base font-medium text-gray_gradient text-white">
                   subhanimran4@gmail.com
                 </p>
               </div>

@@ -45,12 +45,13 @@ const Contact = () => {
   return (
     <section className="c-space my-20" id="contact">
       <div className="relative min-h-screen flex items-center justify-center flex-col">
+        <div className="absolute inset-0 min-h-screen bg-black/60" />
         <img
           src="/assets/terminal.png"
           alt="terminal background"
-          className="absolute inset-0 min-h-screen"
+          className="absolute inset-0 min-h-screen object-cover"
         />
-        <div className="contact-container">
+        <div className="contact-container relative z-10">
           <h3 className="head-text">Let's Talk</h3>
           <p className="text-lg text-white-600 mt-3">
             Wether you are looking to build a new website, improve your existing

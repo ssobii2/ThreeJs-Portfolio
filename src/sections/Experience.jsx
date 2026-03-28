@@ -16,9 +16,9 @@ const Experience = () => {
         <h3 className="head-text">My Work Experience</h3>
 
         <div className="work-container">
-          <div className="work-canvas">
+          <div className="work-canvas hidden md:block">
             {isVisible && (
-              <Canvas>
+              <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
                 <ambientLight intensity={7} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />
@@ -54,10 +54,10 @@ const Experience = () => {
 
                     <div className="sm:p-5 px-2.5 py-5">
                       <p className="font-bold text-white-800">{name}</p>
-                      <p className="text-sm mb-5">
+                      <p className="text-sm mb-3 sm:mb-5">
                         {pos} -- {duration}
                       </p>
-                      <p className="group-hover:text-white transition ease-in-out duration-500">
+                      <p className="text-sm group-hover:text-white transition ease-in-out duration-500 line-clamp-4">
                         {title}
                       </p>
                     </div>
