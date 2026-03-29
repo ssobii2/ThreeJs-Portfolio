@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { workExperiences } from "../constants/index.js";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import Developer from "../components/Developer.jsx";
@@ -8,7 +8,26 @@ import useOnScreen from "../hooks/useOnScreen.js";
 
 const Experience = () => {
   const [animationName, setanimationName] = useState("idle");
-  const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
+  const [ref, isVisible] = useOnScreen({ threshold: 0.5 });
+  const canvasRef = useRef(null);
+  const [canvasVisible, setCanvasVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible || !canvasRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanvasVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(canvasRef.current);
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   return (
     <section className="c-space my-20" id="work" ref={ref}>
@@ -16,9 +35,9 @@ const Experience = () => {
         <h3 className="head-text">My Work Experience</h3>
 
         <div className="work-container">
-          <div className="work-canvas hidden md:block">
-            {isVisible && (
-              <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
+          <div ref={canvasRef} className="work-canvas hidden md:block">
+            {canvasVisible && (
+              <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1]} frameloop="demand">
                 <ambientLight intensity={7} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />

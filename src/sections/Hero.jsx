@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import HackerRoom from "../components/HackerRoom";
-import { Suspense } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants";
@@ -18,6 +18,27 @@ const isMobile = useMediaQuery({ maxWidth: 768 });
 const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
 const sizes = calculateSizes(isSmall, isMobile, isTablet);
+const [isVisible, setIsVisible] = useState(false);
+const canvasRef = useRef(null);
+
+useEffect(() => {
+  // Lazy-load 3D scene only when visible in viewport
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  if (canvasRef.current) {
+    observer.observe(canvasRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
 
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
@@ -30,9 +51,13 @@ const sizes = calculateSizes(isSmall, isMobile, isTablet);
         </p>
       </div>
 
-      {/* 3D Canvas - only on larger screens, hidden on mobile for performance */}
-      <div className="w-full h-full absolute inset-0 hidden md:block">
-          <Canvas className="w-full h-full" gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]} framelooping="demand">
+      {/* 3D Canvas - only render when visible in viewport AND not on mobile */}
+      <div 
+        ref={canvasRef}
+        className="w-full h-full absolute inset-0 hidden md:block"
+      >
+        {isVisible && (
+          <Canvas className="w-full h-full" gl={{ antialias: true, alpha: true }} dpr={[1, 1]} frameloop="demand">
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
@@ -55,16 +80,17 @@ const sizes = calculateSizes(isSmall, isMobile, isTablet);
               <directionalLight position={[10, 10, 10]} intensity={0.5} />
             </Suspense>
           </Canvas>
-        </div>
+        )}
+      </div>
 
-        {/* Mobile fallback gradient */}
-        <div className="md:hidden w-full absolute inset-0 bg-gradient-to-b from-black-200 to-transparent opacity-50" />
+      {/* Mobile fallback gradient - always visible on mobile, covers full section */}
+      <div className="md:hidden w-full absolute inset-0 bg-gradient-to-b from-black-200 via-black-100 to-black-200" />
 
-        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-          <a href="#about" className="w-full flex justify-center">
-            <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
-          </a>
-        </div>
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <a href="#about" className="w-full flex justify-center">
+          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+        </a>
+      </div>
     </section>
   );
 };

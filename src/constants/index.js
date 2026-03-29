@@ -63,7 +63,7 @@ export const myProjects = [
     subdesc:
       'Built using Vue.js, Tailwind CSS, JavaScript, Docker, Ollama, FastAPI and Langchain.',
     href: 'https://github.com/ssobii2/AI-RAG-Chatbot-Ollama',
-    texture: '/textures/project/project1.mp4',
+    texture: '/assets/spotlight1.png',
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#FFF',
@@ -115,7 +115,7 @@ export const myProjects = [
     subdesc:
       'Built using React, JavaScript, HTML, CSS',
     href: 'https://github.com/ssobii2/Magic-Memory-Game',
-    texture: '/textures/project/project2.mp4',
+    texture: '/assets/spotlight2.png',
     logo: '/assets/project-logo2.png',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -152,7 +152,7 @@ export const myProjects = [
     subdesc:
       'Built using React, JavaScript, HTML, CSS',
     href: 'https://github.com/ssobii2/Tenzies-Game',
-    texture: '/textures/project/project3.mp4',
+    texture: '/assets/spotlight3.png',
     logo: '/assets/project-logo3.png',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -191,7 +191,7 @@ export const myProjects = [
     subdesc:
       'Built with Vue.js, Wordpress, Laravel and Bootstrap, tailored to meet the needs of modern consumers.',
     href: 'https://www.kutatokejszakaja.hu',
-    texture: '/textures/project/project4.mp4',
+    texture: '/assets/spotlight4.png',
     logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -233,7 +233,7 @@ export const myProjects = [
     subdesc:
       'Built with Vue.js, Laravel and Bootstrap, tailored to meet the needs of modern consumers.',
     href: 'https://zyntern.com',
-    texture: '/textures/project/project5.mp4',
+    texture: '/assets/spotlight5.png',
     logo: '/assets/project-logo5.png',
     logoStyle: {
       backgroundColor: '#1C1A43',

@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import { myProjects } from "../constants/index.js";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
@@ -12,6 +12,25 @@ const Project = () => {
   const [selectedProjectIndex, setselectedProjectIndex] = useState(0);
   const currentProject = myProjects[selectedProjectIndex];
   const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
+  const [canvasVisible, setCanvasVisible] = useState(false);
+  const canvasContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isVisible || !canvasContainerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanvasVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(canvasContainerRef.current);
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   const handleNavigation = (direction) => {
     setselectedProjectIndex((prevIndex) => {
@@ -100,9 +119,9 @@ const Project = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-72 md:h-full min-h-[400px]">
-            {isVisible && (
-                <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
+        <div ref={canvasContainerRef} className="border border-black-300 bg-black-200 rounded-lg h-72 md:h-full min-h-[400px]">
+            {canvasVisible && (
+                <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1]} frameloop="demand">
                     <ambientLight intensity={Math.PI} />
                     <directionalLight position={[10, 10, 5]} />
 
