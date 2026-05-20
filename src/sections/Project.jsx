@@ -27,8 +27,8 @@ const Project = () => {
     <section className="c-space my-20" ref={ref}>
       <p className="head-text">My Work</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 lg:h-[600px]">
+          <div className="absolute top-0 right-0 pointer-events-none">
             <img
               src={currentProject.spotlight}
               alt="spotlight"
@@ -45,10 +45,10 @@ const Project = () => {
               className="w-10 h-10 shadow-sm"
             />
           </div>
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">
-              {currentProject.title}
-            </p>
+          <p className="text-white text-2xl font-semibold animatedText mt-5">
+            {currentProject.title}
+          </p>
+          <div className="flex flex-col gap-5 text-white-600 lg:flex-1 lg:min-h-0 lg:overflow-y-auto project-text-scroll">
             <p className="animatedText">{currentProject.desc}</p>
             <p className="animatedText">{currentProject.subdesc}</p>
           </div>
@@ -60,15 +60,17 @@ const Project = () => {
                 </div>
               ))}
             </div>
-            <a
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-            >
-              <p>Check Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
+            {currentProject.href !== '#' && (
+              <a
+                href={currentProject.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 cursor-pointer text-white-600"
+              >
+                <p>{currentProject.linkLabel ?? 'Check Site'}</p>
+                <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              </a>
+            )}
           </div>
           <div className="flex justify-between items-center mt-7">
             <button

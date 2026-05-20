@@ -151,6 +151,16 @@ body {
   }
 }
 
+.project-text-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+}
+
+.project-text-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .waving-hand {
   animation-name: wave-animation;
   animation-duration: 2.5s;

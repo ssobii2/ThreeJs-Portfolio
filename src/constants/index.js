@@ -23,11 +23,87 @@ export const navLinks = [
 
 export const myProjects = [
   {
+    title: 'Sensfish - Marine Monitoring Platform',
+    desc: 'Sensfish is a multi-tenant marine monitoring platform delivering scored reef health, seagrass health, and vessel sustainability indices. It combines Copernicus satellite ocean data, Global Fishing Watch AIS vessel tracking, biodiversity records, and ML pipelines to produce actionable environmental reports for marine restoration clients.',
+    subdesc:
+      'Built with Laravel, React, TypeScript, PostgreSQL, PostGIS, TimescaleDB, and MapLibre GL JS.',
+    href: '#',
+    texture: '/textures/project/project6.mp4',
+    logo: '/assets/project-logo6.png',
+    logoStyle: {
+      backgroundColor: '#0D1F2D',
+      border: '0.2px solid #0E3047',
+      boxShadow: '0px 0px 60px 0px #1B6CA84D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 3,
+        name: 'Laravel',
+        path: '/assets/laravel.png',
+      },
+      {
+        id: 4,
+        name: 'Python',
+        path: '/assets/python.png',
+      },
+    ],
+  },
+  {
+    title: 'Melt-B - Satellite Thermal Mapping',
+    desc: 'Melt-B is an ESA-commissioned platform that identifies buildings with excessive heat loss at urban scale. It processes nighttime infrared satellite imagery with AI to benchmark building energy efficiency and prioritize retrofitting for CO2 reduction.',
+    subdesc:
+      'Built with Laravel, React, Tailwind CSS, PostgreSQL with PostGIS for geospatial queries, and Redis. Piloted across Debrecen and Southampton.',
+    href: 'https://astro42.com/case-studies/melt-b-satellite-thermal-mapping-urban-energy-efficiency/',
+    linkLabel: 'Case Study',
+    texture: '/textures/project/project7.mp4',
+    logo: '/assets/project-logo7.png',
+    logoStyle: {
+      backgroundColor: '#1F1508',
+      border: '0.2px solid #3D2E0A',
+      boxShadow: '0px 0px 60px 0px #E8650A4D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Laravel',
+        path: '/assets/laravel.png',
+      },
+      {
+        id: 2,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'Docker',
+        path: '/assets/docker.png',
+      },
+    ],
+  },
+  {
     title: 'AI-RAG - An AI Chatbot Website',
     desc: 'An AI chatbot website that lets you chat with based on the provided context. Context can be PDFs, Images, Excel files, CSV files and more. The chatbot is using Ollama, an open-source project that lets you utilize many open-source AI models to chat with.',
     subdesc:
       'Built using Vue.js, Tailwind CSS, JavaScript, Docker, Ollama, FastAPI and Langchain.',
     href: 'https://github.com/ssobii2/AI-RAG-Chatbot-Ollama',
+    linkLabel: 'Github',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -122,7 +198,7 @@ export const myProjects = [
     logoStyle: {
       backgroundColor: '#13202F',
       background:
-        'linear-gradient(0deg, ##13202F, ##13202F), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+        'linear-gradient(0deg, #13202F, #13202F), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
       border: '0.2px solid #17293E',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
@@ -245,20 +321,38 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'DATelite',
-    pos: 'Internship',
-    duration: 'Sep 2022 - May 2023',
-    title: "Streamline a website to web-based service integration (based on the Bootstrap framework). Consolidate user requirements into a webpage. Using a different JavaScript-based solution/library for data visualization. A user-friendly web interface will integrate charts, plots, and maps into the site. Extending the already-made login system for the client website using PHP and UserSpice.",
-    icon: '/assets/datelite.png',
-    animation: 'clapping',
+    name: 'Astro42',
+    pos: 'Web Developer',
+    duration: 'Dec 2024 - Present',
+    title: "Built the Astro42 company website end-to-end as sole developer — frontend, backend, database, and deployment. Owned the full DevOps pipeline: CI/CD automation, SSL, server provisioning, and performance tuning for production.",
+    icon: '/assets/astro42.png',
+    animation: 'victory',
   },
   {
     id: 2,
     name: 'Wozify',
-    pos: 'Junior Web Developer',
+    pos: 'Web Developer',
     duration: 'Jan 2024 - Present',
-    title: "Fixing Bugs on different projects and extending them with new features according to the client’s needs. Learning different web-based technologies and frameworks likeWordPress, Vue js, Laravel etc. Optimizing code on existing projects and maintaining them according to the client's needs.",
+    title: "Full-stack development across client projects using Laravel, Vue.js, React, and Node.js. Managed DevOps workflows end-to-end, integrated AI/LLM features and RESTful APIs, and modernized legacy systems with modular architecture.",
     icon: '/assets/wozify.png',
+    animation: 'clapping',
+  },
+  {
+    id: 3,
+    name: 'University of Pécs',
+    pos: 'International Student Mentor',
+    duration: 'Aug 2022 - Jul 2023',
+    title: "Mentored new international students through admission and study processes. Provided academic guidance on course selection and time management, and facilitated communication between students, professors, and university services.",
+    icon: '/assets/uop.png',
     animation: 'victory',
+  },
+  {
+    id: 4,
+    name: 'DATelite',
+    pos: 'Intern',
+    duration: 'Sep 2022 - May 2023',
+    title: "Streamlined a website with web-based service integration using Bootstrap. Built a data visualization UI with charts, plots, and maps. Extended an existing PHP/UserSpice login system for a client website.",
+    icon: '/assets/datelite.png',
+    animation: 'clapping',
   },
 ];

@@ -18,13 +18,13 @@ const Experience = () => {
         <div className="work-container">
           <div className="work-canvas">
             {isVisible && (
-              <Canvas dpr={[1, 1.5]}>
+              <Canvas dpr={[1, 1.5]} camera={{ position: [0, 1, 10], fov: 40 }}>
                 <ambientLight intensity={1.2} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />
-                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} target={[0, 0, 0]} />
                 <Suspense fallback={<CanvasLoader />}>
-                  <Developer position-y={-3} scale={3} animationName={animationName} />
+                  <Developer position-y={-3} scale={2.5} animationName={animationName} />
                 </Suspense>
               </Canvas>
             )}
