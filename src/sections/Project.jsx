@@ -56,7 +56,7 @@ const Project = () => {
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
-                  <img src={tag.path} alt="tag.name" />
+                  <img src={tag.path} alt={tag.name} />
                 </div>
               ))}
             </div>
@@ -96,18 +96,24 @@ const Project = () => {
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
             {isVisible && (
-                <Canvas>
+                <Canvas dpr={[1, 1.5]}>
                     <ambientLight intensity={Math.PI} />
                     <directionalLight position={[10, 10, 5]} />
 
                     <Center>
                     <Suspense fallback={<CanvasLoader />}>
-                        <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                        <group scale={2.6} position={[0, -3.2, 0]} rotation={[0, -0.1, 0]}>
                         <DemoComputer texture={currentProject.texture} />
                         </group>
                     </Suspense>
                     </Center>
-                    <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+                    <OrbitControls
+                      enableZoom={false}
+                      minPolarAngle={Math.PI / 2.6}
+                      maxPolarAngle={Math.PI / 2}
+                      minAzimuthAngle={-0.5}
+                      maxAzimuthAngle={0.5}
+                    />
                 </Canvas>
             )}
         </div>

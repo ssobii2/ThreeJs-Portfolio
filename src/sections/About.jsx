@@ -1,9 +1,12 @@
-import Globe from "react-globe.gl";
 import Button from "../components/Button";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
+import useOnScreen from "../hooks/useOnScreen.js";
+
+const GlobeView = lazy(() => import("../components/GlobeView"));
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const [globeRef, globeVisible] = useOnScreen({ threshold: 0.1, rootMargin: "200px" });
   const handleCopy = () => {
     navigator.clipboard.writeText("subhanimran4@gmail.com");
     setHasCopied(true);
@@ -24,7 +27,7 @@ const About = () => {
             />
 
             <div>
-              <p className="grid-headtext">Hi, I am Muhammad Subhan</p>
+              <p className="grid-headtext">Hi, I am Muhammad Subhan Imran</p>
               <p className="grid-subtext">
                 With over 2 years of experience, I have honed my skills in frontend
                 and basic backend development.
@@ -37,7 +40,7 @@ const About = () => {
             <img
               src="/assets/grid2.png"
               alt="grind-2"
-              className="w-full sm:2-[276px] h-fit object-contain"
+              className="w-full sm:h-[276px] h-fit object-contain"
             />
 
             <div>
@@ -52,24 +55,22 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-              />
+            <div
+              ref={globeRef}
+              className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"
+            >
+              {globeVisible && (
+                <Suspense fallback={null}>
+                  <GlobeView />
+                </Suspense>
+              )}
             </div>
             <div>
               <p className="grid-headtext">
                 I work Remotely across most timezones.
               </p>
               <p className="grid-subtext">
-                I'm based in Pakistan, with remote work available.
+                I&apos;m based in Pakistan, with remote work available.
               </p>
               <a href="#contact" className="w-fit">
                 <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
@@ -89,7 +90,7 @@ const About = () => {
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
                 I love solving problems and building things through code. Coding
-                isn't just my profession - it is my passion.
+                isn&apos;t just my profession - it is my passion.
               </p>
             </div>
           </div>
@@ -109,7 +110,7 @@ const About = () => {
                   src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
                   alt="copy"
                 />
-                <p className="lg:text-wxl md:text-xl font-medium text-gray_gradient text-white">
+                <p className="lg:text-xl md:text-xl font-medium text-gray_gradient text-white">
                   subhanimran4@gmail.com
                 </p>
               </div>

@@ -19,13 +19,18 @@ const Contact = () => {
     setloading(true);
 
     try {
-       await emailjs.send("service_8cs01j8", "template_0ar7w2r", {
-            from_name: form.name,
-            to_name: "Muhammad Subhan",
-            from_email: form.email,
-            to_email: "subhanimran4@gmail.com",
-            message: form.message,
-        }, 'JWCf33ZT9O3-uJ7q3');
+       await emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+                from_name: form.name,
+                to_name: "Muhammad Subhan Imran",
+                from_email: form.email,
+                to_email: "subhanimran4@gmail.com",
+                message: form.message,
+            },
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        );
         setloading(false);
 
         alert("Message sent successfully");
@@ -51,10 +56,10 @@ const Contact = () => {
           className="absolute inset-0 min-h-screen"
         />
         <div className="contact-container">
-          <h3 className="head-text">Let's Talk</h3>
+          <h3 className="head-text">Let&apos;s Talk</h3>
           <p className="text-lg text-white-600 mt-3">
             Wether you are looking to build a new website, improve your existing
-            platform, or bring a unique project to life, I'm here to help.
+            platform, or bring a unique project to life, I&apos;m here to help.
           </p>
 
           <form

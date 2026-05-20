@@ -6,7 +6,7 @@ const NavItems = () => {
         <ul className='nav-ul'>
             {navLinks.map(({ id, href, name }) => (
                 <li key={id} className='nav-li'>
-                    <a href={href} className='nac-li_a' onClick={() => {}}>
+                    <a href={href} className='nav-li_a' onClick={() => {}}>
                         {name}
                     </a>
                 </li>
@@ -26,7 +26,7 @@ const Navbar = () => {
     <header className='fixed top-0 left-0 right-0 z-50 bg-black/90'>
         <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center py-5 mx-auto c-space">
-                <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">Muhammad Subhan</a>
+                <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">Muhammad Subhan Imran</a>
 
                 <button onClick={toggleMenu} className='text-neutral-400 hover:text-white focus:outline-none sm:hidden flex' aria-label='Toggle menu'>
                     <img src={isOpen ? "assets/close.svg" : "assets/menu.svg"} alt="toggle" className="w-6 h-6"/>
