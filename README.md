@@ -76,3 +76,7 @@ If keys are missing the form will throw on submit — handler surfaces an alert.
 - Vendor chunks are split (`three`, `r3f`, `globe`, `gsap`) so updates to app code don't bust the cache for the big libraries.
 - `useOnScreen` gates the Project and Experience `<Canvas>` mounts so off-screen scenes consume no GPU.
 - All canvases cap `dpr` at `[1, 1.5]` to avoid 4× fragment cost on retina displays.
+
+## Credits
+
+- "iMac 24" M1 Green (2021)" ([skfb.ly/onIKx](https://skfb.ly/onIKx)) by **Kanedog**, licensed under [Creative Commons Attribution 4.0](http://creativecommons.org/licenses/by/4.0/).

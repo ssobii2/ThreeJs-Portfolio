@@ -96,13 +96,13 @@ const Project = () => {
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
             {isVisible && (
-                <Canvas dpr={[1, 1.5]}>
+                <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0.8, 5], fov: 75 }}>
                     <ambientLight intensity={Math.PI} />
                     <directionalLight position={[10, 10, 5]} />
 
                     <Center>
                     <Suspense fallback={<CanvasLoader />}>
-                        <group scale={2.6} position={[0, -3.2, 0]} rotation={[0, -0.1, 0]}>
+                        <group scale={0.0009} position={[0, -1.2, 0]} rotation={[0, Math.PI - 0.1, Math.PI]}>
                         <DemoComputer texture={currentProject.texture} />
                         </group>
                     </Suspense>
